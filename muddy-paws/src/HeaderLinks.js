@@ -10,11 +10,13 @@ class HeaderLinks extends Component{
   render() {
     return (
       <table id="header_links">
-        <tr>
-          <td><div id="sign_in"><a href="">Sign In</a></div></td>
-	      <td><div id="my_account"><a href="">My Account</a></div></td>
-	      <td><div><img src={chevronDown} className="header_icon" alt="chevron" /></div></td>
-        </tr>
+        <tbody>
+          <tr>
+            <td><div id="sign_in"><a href="">Sign In</a></div></td>
+	        <td><div id="my_account"><a href="">My Account</a></div></td>
+	        <td><div><img src={chevronDown} className="header_icon" alt="chevron" /></div></td>
+          </tr>
+        </tbody>
       </table>
     );
   }
