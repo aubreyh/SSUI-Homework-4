@@ -1,0 +1,72 @@
+
+body{
+  width: 80%;
+  margin: auto;
+  font-family: 'Rubrik';
+}
+
+a {
+	text-decoration: none; 
+	color: black;
+}
+
+#header {
+	width: 100%;
+	height: 35px;
+    margin: auto;
+	background-color: #5f9e8f;
+}
+
+#header_links{
+	float: right;
+	width: 25%;
+	padding-right: 20px;
+	padding-top: 3px;
+}
+
+.header_icon{
+	float: right; 
+	width: 20px;
+}
+
+#main_content{
+	width: 100%;
+	margin: auto;
+    padding-top: 15px;
+}
+
+#logo{
+    width: 300px;
+    height: auto;
+}
+
+#search{
+	border: 1px solid #DDD;
+	background-color: #D4CFCF;
+}
+
+#search_field{
+	border: none;
+	background-color: #D4CFCF;
+}
+
+#nav_bar{
+	width: 80%;
+	align: center;
+	margin: auto;
+	margin-bottom: 15px;
+	table-layout: fixed;
+}
+
+
+
+#photo_container{
+	width: 100%;
+}
+
+p{
+	margin: 0px;
+}
+#cart_items {
+	display: none;
+}
