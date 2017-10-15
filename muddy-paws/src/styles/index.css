@@ -1,10 +1,13 @@
 
-body{
+.App {
   width: 80%;
   margin: auto;
   font-family: 'Rubrik';
 }
 
+body{
+    margin-top: 0px;
+}
 a {
 	text-decoration: none; 
 	color: black;
@@ -69,4 +72,28 @@ p{
 }
 #cart_items {
 	display: none;
+}
+
+.product_color_1 {
+  background-color: #DD1F26; 
+}
+
+.product_color_2 {
+  background-color: #F15A29;
+}
+
+.product_color_3 {
+  background-color: #EAC71C;
+}
+
+.product_color_4 {
+    background-color: #78866B;
+}
+
+.product_color_5 {
+    background-color: #92278F;
+}
+
+.product_color_6 {
+    background-color: #2D101D;
 }

@@ -144,7 +144,7 @@ p{
 }
 
 div.add_button input {
-    background:url("../resources/images/buttons/add.png") no-repeat;
+    background:url("../images/buttons/add.png") no-repeat;
     cursor:pointer;
     width: 249px;
     height: 51px;

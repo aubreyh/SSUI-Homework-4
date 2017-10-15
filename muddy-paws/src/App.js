@@ -5,17 +5,26 @@ import {
   Link
 } from 'react-router-dom'
 
+import './styles/index.css';
+import './styles/home.css';
 import HeaderLinks from './HeaderLinks.js';
+
+//import Detail from './Detail.js';
+import Products from './Products.js';
+import ShoppingCart from './ShoppingCart.js';
 
 import logo from './images/logo.png';
 import searchIcon from './images/icons/search_icon.png'
 import cartIcon from './images/icons/cart.png'
+import photo_1 from './images/main_photo_1.png';
+
 
 const App = () => (
+  <div className="App">
     <div id="header">
       <HeaderLinks/>
           <Router>
-            <div >
+            <div>
             <div id="header_content">
                   <table id="main_content">
                 <tbody>
@@ -66,25 +75,20 @@ const App = () => (
              <Route path="/cart" component={Cart}/>
            </div>
          </Router>
-    </div> //end header
+    </div>
+    </div>
 )
 
 const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
+   <img className="main_photo" alt="main" src={photo_1}  />
 )
 
 const Browse = () => (
-  <div>
-    <h2>Browse</h2>
-  </div>
+  <Products />
 )
 
 const Cart = () => (
-  <div>
-    <h2>Cart</h2>
-  </div>
+  <ShoppingCart />
 )
 
 

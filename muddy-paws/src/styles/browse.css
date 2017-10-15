@@ -1,13 +1,17 @@
 #columns { 
+width: 100%;
 }
 
-#columns div.left { 
+#browse_left_panel { 
 	float: left;  
 	margin-right: 20px;
+    width: 200px;
 }
 
-#columns div.right { 
-	float: left;  	
+#browse_right_panel { 
+	float: left;  
+	margin-right: 20px;
+    width: 200px;
 }
 
 #columns div.clear { 

@@ -74,7 +74,7 @@ h4{
 }
 
 div.checkout_button input {
-    background:url("../resources/images/buttons/checkout.png") no-repeat;
+    background:url("../images/buttons/checkout.png") no-repeat;
     cursor:pointer;
     width: 315px;
     height: 51px;
@@ -84,7 +84,7 @@ div.checkout_button input {
 }
 
 div.guest_checkout_button input {
-    background:url("../resources/images/buttons/guest_checkout.png") no-repeat;
+    background:url("../images/buttons/guest_checkout.png") no-repeat;
     cursor:pointer;
     width: 315px;
     height: 51px;
