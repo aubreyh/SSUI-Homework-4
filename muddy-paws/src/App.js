@@ -9,7 +9,6 @@ import './styles/index.css';
 import './styles/home.css';
 import HeaderLinks from './HeaderLinks.js';
 
-//import Detail from './Detail.js';
 import Products from './Products.js';
 import ShoppingCart from './ShoppingCart.js';
 

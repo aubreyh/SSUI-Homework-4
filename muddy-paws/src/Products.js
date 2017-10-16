@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
-//import './App.css';
+
 import './styles/index.css';
 import './styles/browse.css';
 
-import product_1 from './images/products/product_1.png'
-import product_2 from './images/products/product_2.png'
-import product_3 from './images/products/product_3.png'
-import product_4 from './images/products/product_4.png'
-import product_5 from './images/products/product_5.png'
-import product_6 from './images/products/product_6.png'
-import product_7 from './images/products/product_7.png'
-import product_8 from './images/products/product_8.png'
-import product_9 from './images/products/product_9.png'
-import product_10 from './images/products/product_10.png'
-import product_11 from './images/products/product_11.png'
-import product_12 from './images/products/product_12.png'
+import Item from './Item.js';
 
+import product_0 from './images/products/product_1.png'
+import product_1 from './images/products/product_2.png'
+import product_2 from './images/products/product_3.png'
+import product_3 from './images/products/product_4.png'
+import product_4 from './images/products/product_5.png'
+import product_5 from './images/products/product_6.png'
+import product_6 from './images/products/product_7.png'
+import product_7 from './images/products/product_8.png'
+import product_8 from './images/products/product_9.png'
+import product_9 from './images/products/product_10.png'
+import product_10 from './images/products/product_11.png'
+import product_11 from './images/products/product_12.png'
 
+//Load JSON file
+var product_details = require('./data.json'); //with path
 
 class Products extends Component{
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
@@ -70,91 +77,149 @@ class Products extends Component{
 <table id="product">
   <tbody>
 <tr>
-<td><div className="thumbnail">
-<h4>CAT HARNESS</h4>
-<h5>$10.99</h5>
-<img src={product_1} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
 
-<td><div className="thumbnail">
-<h4>CAT HARNESS</h4>
-<h5>$13.00</h5>
-<img src={product_2} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
+<td>
+     <Item
+     title={product_details[0].title.toUpperCase()}
+     price={product_details[0].price}
+     description={product_details[0].description}
+     image={product_0}
+     quantity={product_details[0].quantity}
+     altText="product"
+     />
+</td>
 
-<td><div className="thumbnail">
-<h4>WATER ATTACHMENT</h4>
-<h5>$7.99</h5>
-<img src={product_3} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
+<td>
+     <Item
+     title={product_details[1].title.toUpperCase()}
+     price={product_details[1].price}
+     description={product_details[1].description}
+     image={product_1}
+     quantity={product_details[1].quantity}
+     altText="product"
+     />
+</td>
 
-<td><div className="thumbnail">
-<h4>GPS TRACKER COLLAR</h4>
-<h5>$51.65</h5>
-<img src={product_4} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
+<td>
+     <Item
+     title={product_details[2].title.toUpperCase()}
+     price={product_details[2].price}
+     description={product_details[2].description}
+     image={product_2}
+     quantity={product_details[2].quantity}
+     altText="product"
+     />
+</td>
+
+<td>
+     <Item
+     title={product_details[3].title.toUpperCase()}
+     price={product_details[3].price}
+     description={product_details[3].description}
+     image={product_3}
+     quantity={product_details[3].quantity}
+     altText="product"
+     />
+</td>
+
 </tr>
 <tr>
-<td><div className="thumbnail">
-<h4>CAT HARNESS</h4>
-<h5>$14.99</h5>
-<img src={product_5} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
 
-<td><div className="thumbnail">
-<h4>GPS TRACKER COLLAR</h4>
-<h5>$32.80</h5>
-<img src={product_6} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
 
-<td><div className="thumbnail">
-<h4>CAT HARNESS</h4>
-<h5>$7.00</h5>
-<img src={product_7} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
+<td>
+     <Item
+     title={product_details[4].title.toUpperCase()}
+     price={product_details[4].price}
+     description={product_details[4].description}
+     image={product_4}
+     quantity={product_details[4].quantity}
+     altText="product"
+     />
+</td>
 
-<td><div className="thumbnail">
-<h4>WATER ATTACHMENT</h4>
-<h5>$4.25</h5>
-<img src={product_8} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
+<td>
+     <Item
+     title={product_details[5].title.toUpperCase()}
+     price={product_details[5].price}
+     description={product_details[5].description}
+     image={product_5}
+     quantity={product_details[5].quantity}
+     altText="product"
+     />
+</td>
+
+<td>
+     <Item
+     title={product_details[6].title.toUpperCase()}
+     price={product_details[6].price}
+     description={product_details[6].description}
+     image={product_6}
+     quantity={product_details[6].quantity}
+     altText="product"
+     />
+</td>
+
+<td>
+     <Item
+     title={product_details[7].title.toUpperCase()}
+     price={product_details[7].price}
+     description={product_details[7].description}
+     image={product_7}
+     quantity={product_details[7].quantity}
+     altText="product"
+     />
+</td>
+
+
 </tr>
 <tr>
-<td><div className="thumbnail">
-<h4>WATER ATTACHMENT</h4>
-<h5>$5.85</h5>
-<img src={product_9} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
 
-<td><div className="thumbnail">
-<h4>CAT HARNESS</h4>
-<h5>$19.99</h5>
-<img src={product_10} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
 
-<td><div className="thumbnail">
-<h4>CAT HARNESS</h4>
-<h5>$24.95</h5>
-<img src={product_11} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
+<td>
+     <Item
+     title={product_details[8].title.toUpperCase()}
+     price={product_details[8].price}
+     description={product_details[8].description}
+     image={product_8}
+     quantity={product_details[8].quantity}
+     altText="product"
+     />
+</td>
 
-<td><div className="thumbnail">
-<h4>GPS TRACKER COLLAR</h4>
-<h5>$26.99</h5>
-<img src={product_12} alt="product" />
-	<div className="view_text"><h4>VIEW</h4></div>
-</div></td>
+<td>
+     <Item
+     title={product_details[9].title.toUpperCase()}
+     price={product_details[9].price}
+     description={product_details[9].description}
+     image={product_9}
+     quantity={product_details[9].quantity}
+     altText="product"
+     />
+</td>
+
+<td>
+     <Item
+     title={product_details[10].title.toUpperCase()}
+     price={product_details[10].price}
+     description={product_details[10].description}
+     image={product_10}
+     quantity={product_details[10].quantity}
+     altText="product"
+     />
+</td>
+
+<td>
+     <Item
+     title={product_details[11].title.toUpperCase()}
+     price={product_details[11].price}
+     description={product_details[11].description}
+     image={product_11}
+     quantity={product_details[11].quantity}
+     altText="product"
+     />
+</td>
+
+
 </tr>
   </tbody>
 </table>
@@ -168,4 +233,8 @@ class Products extends Component{
 }
 
 
-export default Products;
+
+
+
+
+export default Products

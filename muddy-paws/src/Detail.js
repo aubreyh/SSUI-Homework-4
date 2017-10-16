@@ -20,8 +20,8 @@ class Detail extends Component{
 <tr>
 <td>
 <ul className="breadcrumb">
-  <li><a href="#">Cat</a></li>
-  <li><a href="#">Accessories</a></li>
+  <li><a href="">Cat</a></li>
+  <li><a href="">Accessories</a></li>
   <li id="breadcrumb_product_name">WATER STORAGE ATTACHMENT</li>
 </ul>
 </td>
@@ -93,7 +93,7 @@ class Detail extends Component{
     <tbody>
 <tr>
 	<td><p>SELECT QUANTITY: </p></td>
-	<td><input id="qty" type="number" value="1" min="1" max="5" /></td>
+	<td><input id="qty" type="number" min="1" max="5" /></td>
 </tr>
     </tbody>
 </table>
