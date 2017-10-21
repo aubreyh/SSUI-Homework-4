@@ -1,4 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
 
 import './styles/index.css';
 import './styles/browse.css';
@@ -28,7 +34,9 @@ class Products extends Component{
 
   render() {
     return (
-      <div>
+
+      <div>   
+      <h2><Link to="/detail">Products</Link></h2>
       <div id="columns">
 <div id="browse_left_panel">
 <h3>CAT'S</h3>
