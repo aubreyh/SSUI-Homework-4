@@ -31,7 +31,6 @@
 
 .thumbnail{
 	border-bottom: 1px solid #6D6E71;
-	border-bottom: 1px solid #6D6E71;
 }
 
 
@@ -123,4 +122,26 @@ tr.border_bottom td {
   vertical-align: middle;
   line-height: 20px;
   display: block;
+}
+
+#cart_preview {
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -150px;
+}
+
+#preview {
+    border: 1px solid #6D6E71;
+    background-color: white;
+}
+
+img.preview_thumbnail {
+    width: 75px;
+    height: auto;
+}
+
+.preview_color_swatch{
+	width: 20px;
+	height: 15px;
+    border: none;
 }
