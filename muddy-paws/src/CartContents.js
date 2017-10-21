@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './styles/index.css';
 import './styles/cart.css';
 
-import plus_icon from './images/icons/plus.png'
 import cart_image_1 from './images/products/product_1_2.png'
 import cart_image_2 from './images/products/product_3.png'
 import cart_image_3 from './images/products/product_4_3.png'

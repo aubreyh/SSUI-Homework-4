@@ -25,7 +25,7 @@ import product_10 from './images/products/product_11.png'
 import product_11 from './images/products/product_12.png'
 
 //Load JSON file
-var product_details = require('./data.json'); //with path
+var product_details = require('./data.json'); 
 
 class Products extends Component{
   constructor(props) {
@@ -36,7 +36,7 @@ class Products extends Component{
     return (
 
       <div>   
-      <h2><Link to="/detail">Products</Link></h2>
+      
       <div id="columns">
 <div id="browse_left_panel">
 <h3>CAT'S</h3>
@@ -87,6 +87,7 @@ class Products extends Component{
 <tr>
 
 <td>
+<Link to={'/detail/'+0}>
      <Item
      title={product_details[0].title.toUpperCase()}
      price={product_details[0].price}
@@ -95,9 +96,11 @@ class Products extends Component{
      quantity={product_details[0].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 <td>
+<Link to={'/detail/'+1}>
      <Item
      title={product_details[1].title.toUpperCase()}
      price={product_details[1].price}
@@ -106,9 +109,11 @@ class Products extends Component{
      quantity={product_details[1].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 <td>
+<Link to={'/detail/'+2}>
      <Item
      title={product_details[2].title.toUpperCase()}
      price={product_details[2].price}
@@ -117,9 +122,11 @@ class Products extends Component{
      quantity={product_details[2].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 <td>
+<Link to={'/detail/'+3}>
      <Item
      title={product_details[3].title.toUpperCase()}
      price={product_details[3].price}
@@ -128,6 +135,7 @@ class Products extends Component{
      quantity={product_details[3].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 </tr>
@@ -135,6 +143,7 @@ class Products extends Component{
 
 
 <td>
+<Link to={'/detail/'+4}>
      <Item
      title={product_details[4].title.toUpperCase()}
      price={product_details[4].price}
@@ -143,9 +152,11 @@ class Products extends Component{
      quantity={product_details[4].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 <td>
+<Link to={'/detail/'+5}>
      <Item
      title={product_details[5].title.toUpperCase()}
      price={product_details[5].price}
@@ -154,9 +165,11 @@ class Products extends Component{
      quantity={product_details[5].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 <td>
+<Link to={'/detail/'+6}>
      <Item
      title={product_details[6].title.toUpperCase()}
      price={product_details[6].price}
@@ -165,9 +178,11 @@ class Products extends Component{
      quantity={product_details[6].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 <td>
+<Link to={'/detail/'+7}>
      <Item
      title={product_details[7].title.toUpperCase()}
      price={product_details[7].price}
@@ -176,6 +191,7 @@ class Products extends Component{
      quantity={product_details[7].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 
@@ -184,6 +200,7 @@ class Products extends Component{
 
 
 <td>
+<Link to={'/detail/'+8}>
      <Item
      title={product_details[8].title.toUpperCase()}
      price={product_details[8].price}
@@ -192,9 +209,11 @@ class Products extends Component{
      quantity={product_details[8].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 <td>
+<Link to={'/detail/'+9}>
      <Item
      title={product_details[9].title.toUpperCase()}
      price={product_details[9].price}
@@ -203,9 +222,11 @@ class Products extends Component{
      quantity={product_details[9].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 <td>
+<Link to={'/detail/'+10}>
      <Item
      title={product_details[10].title.toUpperCase()}
      price={product_details[10].price}
@@ -214,9 +235,11 @@ class Products extends Component{
      quantity={product_details[10].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 <td>
+<Link to={'/detail/'+11}>
      <Item
      title={product_details[11].title.toUpperCase()}
      price={product_details[11].price}
@@ -225,6 +248,7 @@ class Products extends Component{
      quantity={product_details[11].quantity}
      altText="product"
      />
+     </Link>
 </td>
 
 

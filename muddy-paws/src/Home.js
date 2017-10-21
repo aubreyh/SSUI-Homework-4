@@ -16,7 +16,7 @@ class Home extends Component{
     return (
       //<div id="photo_container">
         //<div className="photos fade">
-          <img className="main_photo" src={photo_1} />
+          <img className="main_photo" src={photo_1} alt="main"/>
         //</div>
         //<div className="photos fade">
         //  <img className="main_photo" src={photo_2} />

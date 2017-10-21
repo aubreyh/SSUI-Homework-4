@@ -9,6 +9,7 @@ import './styles/index.css';
 import Header from './Header.js';
 import Home from './Home.js';
 import Products from './Products.js';
+import ProductDetail from './ProductDetail.js';
 import ShoppingCart from './ShoppingCart.js';
 
 
@@ -25,7 +26,7 @@ const routes = [
   },
   
   { path: '/detail',
-    main: () => <h2>Detail</h2>
+    main: () => <ProductDetail />
   }
 ]
 
@@ -34,7 +35,7 @@ const App = () => (
     <div>
       <div className="App">
         <div id="header">
-          <Header cart_quantity="1"/>
+          <Header />
           {routes.map((route, index) => (
             <Route
               key={index}

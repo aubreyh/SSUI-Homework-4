@@ -10,8 +10,25 @@ import main_image from './images/products/product_2.png';
 import filled_star from './images/icons/filled_star.png';
 import empty_star from './images/icons/empty_star.png';
 
-class Detail extends Component{
+
+//Load JSON file
+var product_details = require('./data.json'); 
+
+class ProductDetail extends Component{
+  constructor(props) {
+   super(props);
+   
+  this.state = {
+      product_id: -1,
+  };
+  }
+
+
   render() {
+      var temp = window.location.href.split("/");
+      temp = temp[temp.length-1];
+      var product_id = parseInt(temp)
+      this.state.product_id = product_id;
     return (
     <div>
     <div>
@@ -22,7 +39,7 @@ class Detail extends Component{
 <ul className="breadcrumb">
   <li><a href="">Cat</a></li>
   <li><a href="">Accessories</a></li>
-  <li id="breadcrumb_product_name">WATER STORAGE ATTACHMENT</li>
+  <li id="breadcrumb_product_name">{product_details[this.state.product_id].title}</li>
 </ul>
 </td>
 <td id="prev_next"><img src={chevronLeft} alt="left chevron" className="icon" /></td>
@@ -35,17 +52,17 @@ class Detail extends Component{
 </table>
 </div>
 <div id="columns">
-<div id="left_column" className="left">
-	<div className="thumbnail"><img id="thumb_1" className="thumbnail" alt="thumbnail" src={thumbnail_1} /></div>
-	<div className="thumbnail"><img id="thumb_2" className="thumbnail" alt="thumbnail" src={thumbnail_1} /></div>
-	<div className="thumbnail"><img id="thumb_3" className="thumbnail" alt="thumbnail" src={thumbnail_1} /></div>
+<div id="detail_left_panel">
+	<div className="product_detail_thumbnail"><img id="thumb_1" className="product_detail_thumbnail" alt="thumbnail" src={thumbnail_1} /></div>
+	<div className="product_detail_thumbnail"><img id="thumb_2" className="product_detail_thumbnail" alt="thumbnail" src={thumbnail_1} /></div>
+	<div className="product_detail_thumbnail"><img id="thumb_3" className="product_detail_thumbnail" alt="thumbnail" src={thumbnail_1} /></div>
 </div>
-<div id="center_column" className="center">
+<div id="detail_center_panel">
 	<img id="main_image" alt="product" src={main_image} />
 </div>
-<div id="right_column" className="right">
-	<h2 id="product_name">WATER STORAGE ATTACHMENT</h2>
-	<h3 id="price">$0.00</h3>
+<div id="detail_right_panel">
+	<h2 id="product_name">{product_details[this.state.product_id].title}</h2>
+	<h3 id="price">{product_details[this.state.product_id].price}</h3>
 	
 	<table>
     <tbody>
@@ -111,7 +128,7 @@ class Detail extends Component{
     </tbody>
 </table>
 
-<p id="product_description">Portable pet cat water bottle dispenser.</p>
+<p id="product_description">{product_details[this.state.product_id].description}</p>
 
 </div> 
 </div> 
@@ -121,4 +138,4 @@ class Detail extends Component{
 }
 
 
-export default Detail;
+export default ProductDetail;

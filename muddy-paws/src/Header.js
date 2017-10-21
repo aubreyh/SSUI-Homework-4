@@ -21,6 +21,7 @@ class Header extends Component{
     
   this.state = {
       display: "none",
+      cart_quantity: 0,
   };
   this.mouseEnter = this.mouseEnter.bind(this);
   this.mouseLeave = this.mouseLeave.bind(this);
@@ -68,7 +69,7 @@ mouseLeave() {
               <div>
                 <Link to="/cart">
                   <img onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} border="0" alt="cart" src={cartIcon} />
-                  <div id="cart_items">{this.props.cart_quantity}</div>
+                  <div id="cart_items">{this.state.cart_quantity}</div>
                 </Link>
                 <div id="cart_preview" style={{display: this.state.display}}>
                   <CartContents />

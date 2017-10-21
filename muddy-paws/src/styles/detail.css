@@ -29,17 +29,17 @@ ul.breadcrumb li a {
 	width: 1500px;
 }
 
-#columns div.left { 
+#detail_left_panel { 
 	float: left; 
 	width: 125px;  
 }
 
-#columns div.center { 
+#detail_center_panel { 
 	float: left;  
 	width: 515px;  
 }
 
-#columns div.right { 
+#detail_right_panel{ 
 	float: left;
 	width: 500px;
 	margin-left: 30px;
@@ -53,7 +53,7 @@ ul.breadcrumb li a {
 	font-size: 14px;
 }
 
-.thumbnail{
+.product_detail_thumbnail{
 	max-width: 125px; 
     max-height: 125px;
     height: 100%;
