@@ -3,37 +3,59 @@ import React, { Component } from 'react';
 import './styles/index.css';
 import './styles/cart.css';
 
-import cart_image_1 from './images/products/product_1_2.png'
-import cart_image_2 from './images/products/product_3.png'
-import cart_image_3 from './images/products/product_4_3.png'
-
 
 class CartContents extends Component{
+
+
+    
   render() {
+   var temp_cart_items = localStorage.getItem("cart_items");
+        if (temp_cart_items == null) {
+      temp_cart_items = [];
+    } else {
+      temp_cart_items = JSON.parse(temp_cart_items);
+      console.log(temp_cart_items)
+    }
+
+    while (temp_cart_items.length < 3){
+      temp_cart_items.push({
+      product_id: "",
+      title: "",
+      price: "",
+      size: "",
+      color: "",
+      photo: "./images/products/no_product.png",
+      quantity: ""
+    });  
+    }
+    const cart_items = temp_cart_items;
+    //this.setState({cart_items: cart_items});
+
     return (
 
 <table id="preview">
 <tbody>
 <tr id="preview_entry_1" className="preview_entry">
+
 	<td>
 		<div>
 		<table>
         <tbody>
 		<tr>
 		<td>
-			<img className="preview_thumbnail" src={cart_image_1} alt="product" />
+			<img className="preview_thumbnail" src={require("./images/products/product_2_1.png")} alt="product" />
 		</td>
 		<td>
 		<table>
         <tbody>
 		<tr>
-			<td className="preview_product_title"><h4>CAT HARNESS</h4></td>
+			<td className="preview_product_title"><h4>{cart_items[0].title}</h4></td>
 			<td></td>
-			<td><h4 align="right">$10.99</h4></td>
+			<td><h4 align="right">{cart_items[0].price}</h4></td>
 		</tr>
 			<tr>
 			<td>
-			<h4>SIZE: S</h4>
+			<h4>SIZE: {cart_items[0].size}</h4>
 			</td>
 			<td></td>
 			<td></td>
@@ -41,7 +63,7 @@ class CartContents extends Component{
 			
 			<tr>
 			<td>
-			<h4>COLOR: CRAZYBERRY</h4>
+			<h4>COLOR: {cart_items[0].color}</h4>
 			</td>
 			<td>
 			<div className="product_color_5 preview_color_swatch"></div>
@@ -50,7 +72,7 @@ class CartContents extends Component{
 			</tr>
 			<tr>
 			<td>
-			<h4>QTY: 1</h4>
+			<h4>QTY: {cart_items[0].quantity}</h4>
 			</td>
 			<td></td>
 			<td></td>
@@ -74,25 +96,25 @@ class CartContents extends Component{
         <tbody>
 		<tr>
 		<td>
-		<img className="preview_thumbnail" src={cart_image_2} alt="product" />
+		<img className="preview_thumbnail" src={require("./images/products/product_2_1.png")} alt="product" />
 		</td>
 		<td>
 		<table>
         <tbody>
 		<tr>
-			<td className="product_title"><h4>WATER STORAGE ATTACHMENT</h4></td>
+			<td className="product_title"><h4>{cart_items[1].title}</h4></td>
 			<td></td>
-			<td align="right"><h4>$7.99</h4></td>
+			<td align="right"><h4>{cart_items[1].price}</h4></td>
 		</tr>
 			<tr>
 			<td>
-			<h4>SIZE: M</h4>
+			<h4>SIZE: {cart_items[1].size}</h4>
 			</td>
 			</tr>
 			
 			<tr>
 			<td>
-			<h4>COLOR: STRAWBERRY</h4>
+			<h4>COLOR: {cart_items[1].color}</h4>
 			</td>
 			<td>
 			<div className="product_color_1 preview_color_swatch"></div>
@@ -100,7 +122,7 @@ class CartContents extends Component{
 			</tr>
 			<tr>
 			<td>
-			<h4>QTY: 1</h4>
+			<h4>QTY: {cart_items[1].quantity}</h4>
 			</td>
 			</tr>
 			<tr>
@@ -122,15 +144,15 @@ class CartContents extends Component{
         <tbody>
 		<tr>
 		<td>
-		<img className="preview_thumbnail" src={cart_image_3} alt="product" />
+		<img className="preview_thumbnail" src={require("./images/products/product_2_1.png")} alt="product" />
 		</td>
 		<td>
 		<table>
         <tbody>
 		<tr>
-			<td className="preview_product_title"><h4>GPS TRACKER COLLAR</h4></td>
+			<td className="preview_product_title"><h4>{cart_items[2].title}</h4></td>
 			<td></td>
-			<td align="right"><h4>$51.65</h4></td>
+			<td align="right"><h4>{cart_items[2].price}</h4></td>
 		</tr>
 			<tr>
 			<td>
@@ -140,7 +162,7 @@ class CartContents extends Component{
 			
 			<tr>
 			<td>
-			<h4>COLOR: BLACKBERRY</h4>
+			<h4>COLOR: {cart_items[2].color}</h4>
 			</td>
 			<td>
 			<div className="product_color_6 preview_color_swatch"></div>
@@ -148,7 +170,7 @@ class CartContents extends Component{
 			</tr>
 			<tr>
 			<td>
-			<h4>QTY: 1</h4>
+			<h4>QTY: {cart_items[2].quantity}</h4>
 			</td>
 			</tr>
 			<tr>

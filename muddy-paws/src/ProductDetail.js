@@ -14,20 +14,64 @@ var product_details = require('./data.json');
 
 class ProductDetail extends Component{
   constructor(props) {
-   super(props);
-   
-  this.state = {
+    super(props);
+    
+    this.state = {
       product_id: -1,
-  };
-  }
+    };
+}
 
 
+/*Update the number of items in the cart with the quantity of items selected*/
+updateCart(){  
+    //console.log(product_id)
+    //increment quantity 
+    var previous_count = document.getElementById('cart_quantity').innerHTML;
+    var quantity = document.getElementById('qty').value;
+    var new_value = parseInt(previous_count, 10) + parseInt(quantity, 10);
+    document.getElementById('cart_quantity').innerHTML = new_value;
+    localStorage.setItem('cart_quantity', new_value);
+    
+    //add product
+    var title = document.getElementById('product_name').innerHTML;
+    var price = document.getElementById('price').innerHTML;
+    var size = document.getElementById('size_1').getAttribute('value');
+    var color = document.getElementById('color_1').getAttribute('value');
+
+    var temp = window.location.href.split("/");
+    temp = temp[temp.length-1];
+    var product_id = parseInt(temp, 10);
+    var photo = "./images/products/product_" + product_id + "_1.png"
+
+    var items = localStorage.getItem("cart_items");
+        if (items == null) {
+      items = [];
+    } else {
+      items = JSON.parse(items);
+      console.log(items)
+    }
+    
+    items.push({
+      product_id: product_id,
+      title: title,
+      price: price,
+      size: size,
+      color: color,
+      photo: photo,
+      quantity: quantity
+    });
+    
+    localStorage.setItem('cart_items', JSON.stringify(items));
+}
+
+ 
   render() {
-      var temp = window.location.href.split("/");
-      temp = temp[temp.length-1];
-      var product_id = parseInt(temp, 10);
-      this.state.product_id = product_id;
       
+    var temp = window.location.href.split("/");
+    temp = temp[temp.length-1];
+    var product_id = parseInt(temp, 10);
+    this.state.product_id = product_id;
+            
     return (
     <div>
     <div>
@@ -52,7 +96,7 @@ class ProductDetail extends Component{
 </div>
 <div id="columns">
 <div id="detail_left_panel">
-	<div className="product_detail_thumbnail"><img id="thumb_1" className="product_detail_thumbnail" alt="thumbnail" src={require("./images/products/product_" + this.state.product_id + ".png")} /></div>
+	<div className="product_detail_thumbnail"><img id="thumb_1" className="product_detail_thumbnail" alt="thumbnail" src={require("./images/products/product_" + this.state.product_id + "_1.png")} /></div>
 	<div className="product_detail_thumbnail"><img id="thumb_2" className="product_detail_thumbnail" alt="thumbnail" src={require("./images/products/product_" + this.state.product_id + "_2.png")} /></div>
 	<div className="product_detail_thumbnail"><img id="thumb_3" className="product_detail_thumbnail" alt="thumbnail" src={require("./images/products/product_" + this.state.product_id + "_3.png")} /></div>
 </div>
@@ -82,12 +126,12 @@ class ProductDetail extends Component{
 	<table id="colors">
     <tbody>
 <tr>
-	<td><div value="strawberry" className="product_color_1 active_color color_swatch"></div></td>
-	<td><div value="fire orange" className="product_color_2 color_swatch"></div></td>
-	<td><div value="night moon" className="product_color_3 color_swatch"></div></td>
-	<td><div value="camouflage" className="product_color_4 color_swatch"></div></td>
-	<td><div value="crazyberry" className="product_color_5 color_swatch"></div></td>
-	<td><div value="blackberry" className="product_color_6 color_swatch"></div></td>
+	<td><div id="color_1" value="strawberry" className="product_color_1 active_color color_swatch"></div></td>
+	<td><div id="color_2" value="fire orange" className="product_color_2 color_swatch"></div></td>
+	<td><div id="color_3" value="night moon" className="product_color_3 color_swatch"></div></td>
+	<td><div id="color_4" value="camouflage" className="product_color_4 color_swatch"></div></td>
+	<td><div id="color_5" value="crazyberry" className="product_color_5 color_swatch"></div></td>
+	<td><div id="color_6" value="blackberry" className="product_color_6 color_swatch"></div></td>
 </tr>
 </tbody>
 </table>
@@ -97,6 +141,7 @@ class ProductDetail extends Component{
 	<table id="sizes">
     <tbody>
 <tr>
+      
 	<td><div id="size_1" value="XS" className="active_size size_option">XS</div></td>
 	<td><div id="size_2" value="S" className="size_option">S</div></td>
 	<td><div id="size_3" value="M" className="size_option">M</div></td>
@@ -109,12 +154,12 @@ class ProductDetail extends Component{
     <tbody>
 <tr>
 	<td><p>SELECT QUANTITY: </p></td>
-	<td><input id="qty" type="number" min="1" max="5" /></td>
+	<td><input id="qty" type="number" min="1" max="5" defaultValue="1" /></td>
 </tr>
     </tbody>
 </table>
 
-<div className="add_button" id="add_to_cart"><input type="submit" name="" value="" /></div>
+<div className="add_button" id="add_to_cart"><input type="submit" name="" value="" onClick={this.updateCart} /></div>
 
 
 	<table id="info">

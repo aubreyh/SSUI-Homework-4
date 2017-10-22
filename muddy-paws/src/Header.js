@@ -22,7 +22,10 @@ class Header extends Component{
   this.state = {
       display: "none",
       cart_quantity: 0,
+      cart_items: [],
   };
+  
+  this.initializeCart = this.initializeCart.bind(this);
   this.mouseEnter = this.mouseEnter.bind(this);
   this.mouseLeave = this.mouseLeave.bind(this);
 }
@@ -33,6 +36,27 @@ mouseEnter() {
 
 mouseLeave() {
     this.setState({display: "none"})
+}
+
+initializeCart() {
+    var previous_quantity = localStorage.getItem("cart_quantity");
+
+    if (previous_quantity == null) {
+      previous_quantity = 0;
+    } else {
+      previous_quantity = parseInt(previous_quantity, 10);
+    }
+    this.setState({cart_quantity: previous_quantity})
+    
+    var items = localStorage.getItem("cart_items");
+    console.log(items)
+    
+    if (items == null) {
+      items = [];
+    } else {
+      items = JSON.parse(items);
+    }
+    this.setState({cart_items: items})
 }
 
   render() {
@@ -66,7 +90,7 @@ mouseLeave() {
               </div>
             </td>
             <td>
-              <div>
+              <div onLoad={this.initializeCart}>
                 <Link to="/cart">
                   <img onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} border="0" alt="cart" src={cartIcon} />
                   <div id="cart_quantity">{this.state.cart_quantity}</div>

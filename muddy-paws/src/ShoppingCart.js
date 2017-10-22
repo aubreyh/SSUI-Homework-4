@@ -4,13 +4,18 @@ import './styles/index.css';
 import './styles/cart.css';
 
 import plus_icon from './images/icons/plus.png'
-import cart_image_1 from './images/products/product_1_2.png'
-import cart_image_2 from './images/products/product_3.png'
-import cart_image_3 from './images/products/product_4_3.png'
 
 
 class ShoppingCart extends Component{
+
+checkout(){
+    localStorage.clear();
+    console.log("localStorage erased")
+    document.getElementById("cart_quantity").innerHTML = 0;
+}
+
   render() {
+        
     return (
 <div id="columns">
 <div id="left_column" className="left">
@@ -25,7 +30,7 @@ class ShoppingCart extends Component{
         <tbody>
 		<tr>
 		<td>
-			<img src={cart_image_1} alt="product" />
+			<img src={require("./images/products/product_2_1.png")} alt="product" />
 		</td>
 		<td>
 		<table>
@@ -86,7 +91,7 @@ class ShoppingCart extends Component{
         <tbody>
 		<tr>
 		<td>
-		<img src={cart_image_2} alt="product" />
+		<img src={require("./images/products/product_2_1.png")} alt="product" />
 		</td>
 		<td>
 		<table>
@@ -142,7 +147,7 @@ class ShoppingCart extends Component{
         <tbody>
 		<tr>
 		<td>
-		<img src={cart_image_3} alt="product" />
+		<img src={require("./images/products/product_2_1.png")} alt="product" />
 		</td>
 		<td>
 		<table>
@@ -235,7 +240,7 @@ class ShoppingCart extends Component{
 <tbody>
 <tr>
 <td>
-<div className="checkout_button" id="checkout"><input type="submit" name="" value="" /></div>
+<div className="checkout_button" id="checkout"><input type="submit" name="" value="" onClick={this.checkout}/></div>
 </td>
 </tr>
 <tr>
