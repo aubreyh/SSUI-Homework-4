@@ -69,7 +69,7 @@ mouseLeave() {
               <div>
                 <Link to="/cart">
                   <img onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} border="0" alt="cart" src={cartIcon} />
-                  <div id="cart_items">{this.state.cart_quantity}</div>
+                  <div id="cart_quantity">{this.state.cart_quantity}</div>
                 </Link>
                 <div id="cart_preview" style={{display: this.state.display}}>
                   <CartContents />

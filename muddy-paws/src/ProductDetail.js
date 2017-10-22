@@ -5,8 +5,6 @@ import './styles/detail.css';
 
 import chevronLeft from './images/icons/left_chevron.png';
 import chevronRight from './images/icons/right_chevron.png';
-import thumbnail_1 from './images/products/product_2.png';
-import main_image from './images/products/product_2.png';
 import filled_star from './images/icons/filled_star.png';
 import empty_star from './images/icons/empty_star.png';
 
@@ -27,8 +25,9 @@ class ProductDetail extends Component{
   render() {
       var temp = window.location.href.split("/");
       temp = temp[temp.length-1];
-      var product_id = parseInt(temp)
+      var product_id = parseInt(temp, 10);
       this.state.product_id = product_id;
+      
     return (
     <div>
     <div>
@@ -53,12 +52,12 @@ class ProductDetail extends Component{
 </div>
 <div id="columns">
 <div id="detail_left_panel">
-	<div className="product_detail_thumbnail"><img id="thumb_1" className="product_detail_thumbnail" alt="thumbnail" src={thumbnail_1} /></div>
-	<div className="product_detail_thumbnail"><img id="thumb_2" className="product_detail_thumbnail" alt="thumbnail" src={thumbnail_1} /></div>
-	<div className="product_detail_thumbnail"><img id="thumb_3" className="product_detail_thumbnail" alt="thumbnail" src={thumbnail_1} /></div>
+	<div className="product_detail_thumbnail"><img id="thumb_1" className="product_detail_thumbnail" alt="thumbnail" src={require("./images/products/product_" + this.state.product_id + ".png")} /></div>
+	<div className="product_detail_thumbnail"><img id="thumb_2" className="product_detail_thumbnail" alt="thumbnail" src={require("./images/products/product_" + this.state.product_id + "_2.png")} /></div>
+	<div className="product_detail_thumbnail"><img id="thumb_3" className="product_detail_thumbnail" alt="thumbnail" src={require("./images/products/product_" + this.state.product_id + "_3.png")} /></div>
 </div>
 <div id="detail_center_panel">
-	<img id="main_image" alt="product" src={main_image} />
+	<img id="main_image" alt="product" src={require("./images/products/product_" + this.state.product_id + ".png")} />
 </div>
 <div id="detail_right_panel">
 	<h2 id="product_name">{product_details[this.state.product_id].title}</h2>
@@ -73,7 +72,7 @@ class ProductDetail extends Component{
 	<td><img src={filled_star} alt="star" /></td>
 	<td><img src={empty_star} alt="star" /></td>
     <td id="rating">4.0</td>
-    <td><div><a id="reviews_link" href="">206</a></div></td>
+    <td><div><a id="reviews_link" href="">{product_details[this.state.product_id].reviews} reviews</a></div></td>
 </tr>
 </tbody>
 </table>

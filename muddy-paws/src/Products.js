@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import {
-  BrowserRouter as Router,
-  Route,
   Link
 } from 'react-router-dom'
 
@@ -11,26 +9,10 @@ import './styles/browse.css';
 
 import Item from './Item.js';
 
-import product_0 from './images/products/product_1.png'
-import product_1 from './images/products/product_2.png'
-import product_2 from './images/products/product_3.png'
-import product_3 from './images/products/product_4.png'
-import product_4 from './images/products/product_5.png'
-import product_5 from './images/products/product_6.png'
-import product_6 from './images/products/product_7.png'
-import product_7 from './images/products/product_8.png'
-import product_8 from './images/products/product_9.png'
-import product_9 from './images/products/product_10.png'
-import product_10 from './images/products/product_11.png'
-import product_11 from './images/products/product_12.png'
-
 //Load JSON file
 var product_details = require('./data.json'); 
 
 class Products extends Component{
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
@@ -92,7 +74,7 @@ class Products extends Component{
      title={product_details[0].title.toUpperCase()}
      price={product_details[0].price}
      description={product_details[0].description}
-     image={product_0}
+     image={require("./images/products/product_0_1.png")}
      quantity={product_details[0].quantity}
      altText="product"
      />
@@ -105,7 +87,7 @@ class Products extends Component{
      title={product_details[1].title.toUpperCase()}
      price={product_details[1].price}
      description={product_details[1].description}
-     image={product_1}
+     image={require("./images/products/product_1_1.png")}
      quantity={product_details[1].quantity}
      altText="product"
      />
@@ -118,7 +100,7 @@ class Products extends Component{
      title={product_details[2].title.toUpperCase()}
      price={product_details[2].price}
      description={product_details[2].description}
-     image={product_2}
+     image={require("./images/products/product_2_1.png")}
      quantity={product_details[2].quantity}
      altText="product"
      />
@@ -131,7 +113,7 @@ class Products extends Component{
      title={product_details[3].title.toUpperCase()}
      price={product_details[3].price}
      description={product_details[3].description}
-     image={product_3}
+     image={require("./images/products/product_3_1.png")}
      quantity={product_details[3].quantity}
      altText="product"
      />
@@ -148,7 +130,7 @@ class Products extends Component{
      title={product_details[4].title.toUpperCase()}
      price={product_details[4].price}
      description={product_details[4].description}
-     image={product_4}
+     image={require("./images/products/product_4_1.png")}
      quantity={product_details[4].quantity}
      altText="product"
      />
@@ -161,7 +143,7 @@ class Products extends Component{
      title={product_details[5].title.toUpperCase()}
      price={product_details[5].price}
      description={product_details[5].description}
-     image={product_5}
+     image={require("./images/products/product_5_1.png")}
      quantity={product_details[5].quantity}
      altText="product"
      />
@@ -174,7 +156,7 @@ class Products extends Component{
      title={product_details[6].title.toUpperCase()}
      price={product_details[6].price}
      description={product_details[6].description}
-     image={product_6}
+     image={require("./images/products/product_6_1.png")}
      quantity={product_details[6].quantity}
      altText="product"
      />
@@ -187,7 +169,7 @@ class Products extends Component{
      title={product_details[7].title.toUpperCase()}
      price={product_details[7].price}
      description={product_details[7].description}
-     image={product_7}
+     image={require("./images/products/product_7_1.png")}
      quantity={product_details[7].quantity}
      altText="product"
      />
@@ -205,7 +187,7 @@ class Products extends Component{
      title={product_details[8].title.toUpperCase()}
      price={product_details[8].price}
      description={product_details[8].description}
-     image={product_8}
+     image={require("./images/products/product_8_1.png")}
      quantity={product_details[8].quantity}
      altText="product"
      />
@@ -218,7 +200,7 @@ class Products extends Component{
      title={product_details[9].title.toUpperCase()}
      price={product_details[9].price}
      description={product_details[9].description}
-     image={product_9}
+     image={require("./images/products/product_9_1.png")}
      quantity={product_details[9].quantity}
      altText="product"
      />
@@ -231,7 +213,7 @@ class Products extends Component{
      title={product_details[10].title.toUpperCase()}
      price={product_details[10].price}
      description={product_details[10].description}
-     image={product_10}
+     image={require("./images/products/product_10_1.png")}
      quantity={product_details[10].quantity}
      altText="product"
      />
@@ -244,7 +226,7 @@ class Products extends Component{
      title={product_details[11].title.toUpperCase()}
      price={product_details[11].price}
      description={product_details[11].description}
-     image={product_11}
+     image={require("./images/products/product_11_1.png")}
      quantity={product_details[11].quantity}
      altText="product"
      />
