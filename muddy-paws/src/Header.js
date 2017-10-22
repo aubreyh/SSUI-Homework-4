@@ -49,7 +49,6 @@ initializeCart() {
     this.setState({cart_quantity: previous_quantity})
     
     var items = localStorage.getItem("cart_items");
-    console.log(items)
     
     if (items == null) {
       items = [];
