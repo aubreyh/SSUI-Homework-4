@@ -4,7 +4,7 @@ import './styles/index.css';
 import './styles/cart.css';
 
 
-class CartContents extends Component{
+class CartPreview extends Component{
  
     renderEntry(){
         var temp_cart_items = localStorage.getItem("cart_items");
@@ -12,7 +12,6 @@ class CartContents extends Component{
             temp_cart_items = [];
         } else {
             temp_cart_items = JSON.parse(temp_cart_items);
-            console.log(temp_cart_items)
         }
 
         const cart_items = temp_cart_items;
@@ -37,7 +36,7 @@ class CartContents extends Component{
 		                          <tr>
 			                        <td className="preview_product_title"><h4>{value.title}</h4></td>
 			                        <td></td>
-			                        <td><h4 align="right">{value.price}</h4></td>
+			                        <td><h4 align="right">${value.price}</h4></td>
 		                          </tr>
 			                      <tr>
 			                        <td>
@@ -48,7 +47,7 @@ class CartContents extends Component{
 			                      </tr>
 			                      <tr>
 			                        <td>
-			                          <h4>COLOR: {value.color}</h4>
+			                          <h4>COLOR: {value.color.toUpperCase()}</h4>
 			                        </td>
 			                        <td>
 			                          <div className="product_color_5 preview_color_swatch"></div>
@@ -90,4 +89,4 @@ class CartContents extends Component{
 }
 
 
-export default CartContents;
+export default CartPreview;
