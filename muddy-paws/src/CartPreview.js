@@ -7,6 +7,21 @@ import './styles/cart.css';
 class CartPreview extends Component{
  
     renderEntry(){
+        var product_images = [
+            require("./images/products/product_0_1.png"),
+            require("./images/products/product_1_1.png"),
+            require("./images/products/product_2_1.png"),
+            require("./images/products/product_3_1.png"),
+            require("./images/products/product_4_1.png"),
+            require("./images/products/product_5_1.png"),
+            require("./images/products/product_6_1.png"),
+            require("./images/products/product_7_1.png"),
+            require("./images/products/product_8_1.png"),
+            require("./images/products/product_9_1.png"),
+            require("./images/products/product_10_1.png"),
+            require("./images/products/product_11_1.png"),
+        ];
+        
         var temp_cart_items = localStorage.getItem("cart_items");
         if (temp_cart_items == null) {
             temp_cart_items = [];
@@ -17,7 +32,6 @@ class CartPreview extends Component{
         const cart_items = temp_cart_items;
         
         return Object.entries(cart_items).map(([key, value], i) => {
-            //var photo_string = "./images/products/product_1_1.png";
             var color_swatch = "";
             
             switch(value.color) {
@@ -41,8 +55,7 @@ class CartPreview extends Component{
             }
                  
             var class_name = "preview_color_swatch " + color_swatch;
-            //var photo = require({photo_string});
-            //console.log(photo);
+
 			return (
                 <tr className="preview_entry">
                   <td>
@@ -51,7 +64,7 @@ class CartPreview extends Component{
                         <tbody>
 		                  <tr>
 		                    <td>
-			                  <img className="preview_thumbnail" src={require("./images/products/product_1_1.png")} alt="product" />
+			                  <img className="preview_thumbnail" src={product_images[value.product_id]} alt="product" />
 		                    </td>
 		                    <td>
 		                      <table>
