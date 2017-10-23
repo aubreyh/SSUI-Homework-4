@@ -42,6 +42,30 @@ class ShoppingCart extends Component{
             //var photo_string = "./images/products/product_1_1.png";
             //var photo = require({photo_string});
             //console.log(photo);
+            var color_swatch = "";
+            
+            switch(value.color) {
+            case "strawberry":
+                color_swatch = "product_color_1";
+                break;
+            case "fire orange":
+                color_swatch = "product_color_2";
+                break;
+            case "night moon":
+                color_swatch = "product_color_3";
+                break;
+            case "camouflage":
+                color_swatch = "product_color_4";
+                break;
+            case "crazyberry":
+                color_swatch = "product_color_5";
+                break;
+            default:
+                color_swatch = "product_color_6";
+            }
+                 
+            var class_name = "preview_color_swatch " + color_swatch;
+            
 			return (
               <tr className="product_entry">
                 <td>
@@ -72,7 +96,7 @@ class ShoppingCart extends Component{
 			                        <p>COLOR: {value.color.toUpperCase()}</p>
 			                      </td>
 			                      <td>
-			                        <div className="product_color_5 color_swatch"></div>
+			                        <div className={class_name}></div>
 			                      </td>
 			                      <td></td>
 			                    </tr>

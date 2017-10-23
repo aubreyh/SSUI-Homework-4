@@ -17,7 +17,30 @@ class CartPreview extends Component{
         const cart_items = temp_cart_items;
         
         return Object.entries(cart_items).map(([key, value], i) => {
-            var photo_string = "./images/products/product_1_1.png";
+            //var photo_string = "./images/products/product_1_1.png";
+            var color_swatch = "";
+            
+            switch(value.color) {
+            case "strawberry":
+                color_swatch = "product_color_1";
+                break;
+            case "fire orange":
+                color_swatch = "product_color_2";
+                break;
+            case "night moon":
+                color_swatch = "product_color_3";
+                break;
+            case "camouflage":
+                color_swatch = "product_color_4";
+                break;
+            case "crazyberry":
+                color_swatch = "product_color_5";
+                break;
+            default:
+                color_swatch = "product_color_6";
+            }
+                 
+            var class_name = "preview_color_swatch " + color_swatch;
             //var photo = require({photo_string});
             //console.log(photo);
 			return (
@@ -50,7 +73,7 @@ class CartPreview extends Component{
 			                          <h4>COLOR: {value.color.toUpperCase()}</h4>
 			                        </td>
 			                        <td>
-			                          <div className="product_color_5 preview_color_swatch"></div>
+			                          <div className={class_name}></div>
 			                        </td>
 			                        <td></td>
 			                      </tr>

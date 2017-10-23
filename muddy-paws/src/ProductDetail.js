@@ -35,8 +35,8 @@ class ProductDetail extends Component{
         //add product
         var title = document.getElementById('product_name').innerHTML;
         var price = document.getElementById('price').innerHTML;
-        var size = document.getElementById('size_1').getAttribute('value');
-        var color = document.getElementById('color_1').getAttribute('value');
+        var size = document.getElementsByClassName('active_size')[0].getAttribute('value');
+        var color = document.getElementsByClassName('active_color')[0].getAttribute('value');
 
         var temp = window.location.href.split("/");
         temp = temp[temp.length-1];
@@ -65,6 +65,33 @@ class ProductDetail extends Component{
         localStorage.setItem('cart_items', JSON.stringify(items));
     }
 
+    
+    addColorListener(event, type){
+        console.log("add color listener")
+        var class_name = "active_" + type;
+        
+        //remove active class
+        var previous_item_id = document.getElementsByClassName(class_name)[0].id;
+        var old_item = document.getElementById(previous_item_id);
+        old_item.classList.remove(class_name);
+        
+        //add active class
+        var new_item_id = event.target.id;
+        var new_item = document.getElementById(new_item_id);
+        new_item.classList.add(class_name); 
+        
+        //update text
+        var string_id = type + "_string";
+        var content = type + ": " + new_item.getAttribute('value');
+        content = content.toUpperCase();
+        
+        if(type === "size"){
+            content += " (In Stock)";
+        }
+        
+        var text_element = document.getElementById(string_id);
+        text_element.innerHTML = content;
+    }
  
     render() {
       
@@ -127,12 +154,12 @@ class ProductDetail extends Component{
 	            <table id="colors">
                   <tbody>
                     <tr>
-	                  <td><div id="color_1" value="strawberry" className="product_color_1 active_color color_swatch"></div></td>
-	                  <td><div id="color_2" value="fire orange" className="product_color_2 color_swatch"></div></td>
-	                  <td><div id="color_3" value="night moon" className="product_color_3 color_swatch"></div></td>
-	                  <td><div id="color_4" value="camouflage" className="product_color_4 color_swatch"></div></td>
-	                  <td><div id="color_5" value="crazyberry" className="product_color_5 color_swatch"></div></td>
-	                  <td><div id="color_6" value="blackberry" className="product_color_6 color_swatch"></div></td>
+	                  <td><div id="color_1" value="strawberry" className="product_color_1 active_color color_swatch" onClick={(e) => this.addColorListener(e, "color")}></div></td>
+	                  <td><div id="color_2" value="fire orange" className="product_color_2 color_swatch" onClick={(e) => this.addColorListener(e, "color")}></div></td>
+	                  <td><div id="color_3" value="night moon" className="product_color_3 color_swatch" onClick={(e) => this.addColorListener(e, "color")}></div></td>
+	                  <td><div id="color_4" value="camouflage" className="product_color_4 color_swatch" onClick={(e) => this.addColorListener(e, "color")}></div></td>
+	                  <td><div id="color_5" value="crazyberry" className="product_color_5 color_swatch" onClick={(e) => this.addColorListener(e, "color")}></div></td>
+	                  <td><div id="color_6" value="blackberry" className="product_color_6 color_swatch" onClick={(e) => this.addColorListener(e, "color")}></div></td>
                     </tr>
                   </tbody>
                 </table>
@@ -142,10 +169,10 @@ class ProductDetail extends Component{
 	            <table id="sizes">
                   <tbody>
                     <tr>
-	                  <td><div id="size_1" value="XS" className="active_size size_option">XS</div></td>
-	                  <td><div id="size_2" value="S" className="size_option">S</div></td>
-	                  <td><div id="size_3" value="M" className="size_option">M</div></td>
-	                  <td><div id="size_4" value="L" className="size_option">L</div></td>
+	                  <td><div id="size_1" value="XS" className="active_size size_option" onClick={(e) => this.addColorListener(e, "size")}>XS</div></td>
+	                  <td><div id="size_2" value="S" className="size_option" onClick={(e) => this.addColorListener(e, "size")}>S</div></td>
+	                  <td><div id="size_3" value="M" className="size_option" onClick={(e) => this.addColorListener(e, "size")}>M</div></td>
+	                  <td><div id="size_4" value="L" className="size_option" onClick={(e) => this.addColorListener(e, "size")}>L</div></td>
                     </tr>
                   </tbody>
                 </table>
