@@ -21,9 +21,12 @@ class ShoppingCart extends Component{
     calculateTotal(){
         var total = 0;
         var prices = document.getElementsByClassName("product_price");
+        var quantities = document.getElementsByClassName("product_quantity");
         for (var i=0; i < prices.length; i++){
-            var p = prices[i].innerHTML.substr(1)
-            total += parseFloat(p, 10);
+            var p = prices[i].innerHTML;
+            var q = quantities[i].innerHTML;
+            console.log(q)
+            total += (parseFloat(p, 10) * parseInt(q, 10));
         }
         total = total.toFixed(2);
         document.getElementById("subtotal").innerHTML = "$" + total;
@@ -96,7 +99,7 @@ class ShoppingCart extends Component{
 		                        <tr>
 			                      <td className="product_title"><h3>{value.title}</h3></td>
 			                        <td></td>
-			                        <td><p align="right" className="product_price">${value.price}</p></td>
+			                        <td><p align="right">$<span className="product_price">{value.price}</span></p></td>
 		                        </tr>
 			                    <tr>
 			                      <td>
@@ -116,7 +119,7 @@ class ShoppingCart extends Component{
 			                    </tr>
 			                    <tr>
 			                      <td>
-			                        <p>QTY: {value.quantity}</p>
+			                        <p>QTY: <span className="product_quantity">{value.quantity}</span></p>
 			                      </td>
 			                      <td></td>
 			                      <td></td>

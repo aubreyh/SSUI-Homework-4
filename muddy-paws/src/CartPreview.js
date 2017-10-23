@@ -57,6 +57,7 @@ class CartPreview extends Component{
             var class_name = "preview_color_swatch " + color_swatch;
 
 			return (
+              <div>
                 <tr className="preview_entry">
                   <td>
                     <div>
@@ -103,11 +104,15 @@ class CartPreview extends Component{
 			                  </table>
 		                    </td>
 		                  </tr>
+                          <tr>
+                          </tr>
                         </tbody>
 			          </table>
 		            </div>
 	              </td>
                 </tr> 
+                {i < cart_items.length-1 && <hr />}
+              </div>  
 			)
 		})
 	}
