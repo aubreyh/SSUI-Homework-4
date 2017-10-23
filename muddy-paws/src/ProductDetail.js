@@ -134,6 +134,7 @@ class ProductDetail extends Component{
               </div>
               <div id="detail_right_panel">
 	            <h2 id="product_name">{product_details[this.state.product_id].title}</h2>
+	            <h3 id="price">{product_details[this.state.product_id].price}</h3>
 	            <table>
                   <tbody>
                     <tr>
